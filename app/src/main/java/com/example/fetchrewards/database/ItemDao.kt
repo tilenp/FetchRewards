@@ -13,6 +13,6 @@ interface ItemDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItems(items: List<Item>): Completable
 
-    @Query("SELECT * FROM Item")
+    @Query("SELECT * FROM Item ORDER BY Item.listId ASC, Item.nameNumber ASC")
     fun getItems(): Observable<List<Item>>
 }

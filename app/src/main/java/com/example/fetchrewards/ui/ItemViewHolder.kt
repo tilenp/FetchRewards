@@ -16,7 +16,7 @@ class ItemViewHolder(
         with(binding) {
             idTextView.text = String.format(idTextView.context.getString(R.string.id_format), item.id)
             listIdTextView.text = String.format(listIdTextView.context.getString(R.string.list_id_format), item.listId)
-            nameTextView.text = String.format(nameTextView.context.getString(R.string.name_format), item.name)
+            nameTextView.text = String.format(nameTextView.context.getString(R.string.name_format), item.namePrefix)
         }
     }
 

@@ -1,10 +1,9 @@
 package com.example.fetchrewards.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fetchrewards.R
 import com.example.fetchrewards.dagger.ComponentProvider
 import com.example.fetchrewards.database.Item
 import com.example.fetchrewards.databinding.ActivityMainBinding

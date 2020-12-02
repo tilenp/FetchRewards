@@ -8,5 +8,6 @@ data class Item(
     @PrimaryKey
     val id: Int,
     val listId: Int,
-    val name: String
+    val namePrefix: String,
+    val nameNumber: Int
 )
