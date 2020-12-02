@@ -1,5 +1,6 @@
 package com.example.fetchrewards.network
 
+import androidx.annotation.VisibleForTesting
 import com.example.fetchrewards.NAME_SEPARATOR
 import com.example.fetchrewards.database.RoomItem
 import java.lang.StringBuilder
@@ -19,7 +20,8 @@ class ItemMapper @Inject constructor() {
         )
     }
 
-    private fun parseNumber(name: String?): Int? {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    fun parseNumber(name: String?): Int? {
         name?.forEachIndexed { index, character ->
             if (character.isDigit()) {
                 val builder = StringBuilder()
@@ -37,7 +39,8 @@ class ItemMapper @Inject constructor() {
         return null
     }
 
-    private fun getNameFormat(name: String?, nameNumber: Int?): String {
+    @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+    fun getNameFormat(name: String?, nameNumber: Int?): String {
         name?.let {
             nameNumber?.let {
                 return name.replace(nameNumber.toString(), NAME_SEPARATOR)

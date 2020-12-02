@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 @Entity
 data class RoomItem(
     @PrimaryKey
-    val id: Int,
-    val listId: Int,
-    val nameFormat: String,
-    val nameNumber: Int?
+    val id: Int = 0,
+    val listId: Int = 0,
+    val nameFormat: String = "",
+    val nameNumber: Int? = null
 )
