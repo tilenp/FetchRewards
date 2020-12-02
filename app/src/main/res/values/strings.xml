@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">FetchRewards</string>
+
+    <string name="id_format">id: %d</string>
+    <string name="list_id_format">listId: %d</string>
+    <string name="name_format">name: %s</string>
 </resources>
