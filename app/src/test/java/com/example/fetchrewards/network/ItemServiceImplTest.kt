@@ -8,7 +8,7 @@ import org.junit.Test
 class ItemServiceImplTest {
 
     private val itemApi: ItemApi = mock()
-    private val roomItemMapper: ItemMapper = mock()
+    private val roomRoomItemMapper: RoomItemMapper = mock()
     private lateinit var itemServiceImpl: ItemServiceImpl
 
     private val blankNameRemoteItem = RemoteItem(name = "")
@@ -17,8 +17,8 @@ class ItemServiceImplTest {
 
     fun setUp(remoteItems: List<RemoteItem>) {
         whenever(itemApi.getItems()).thenReturn(Single.just(remoteItems))
-        whenever(roomItemMapper.map(any())).thenReturn(RoomItem())
-        itemServiceImpl = ItemServiceImpl(itemApi, roomItemMapper)
+        whenever(roomRoomItemMapper.map(any())).thenReturn(RoomItem())
+        itemServiceImpl = ItemServiceImpl(itemApi, roomRoomItemMapper)
     }
 
     @Test
@@ -35,7 +35,7 @@ class ItemServiceImplTest {
             .dispose()
 
         // assert
-        verify(roomItemMapper, times(1)).map(validRemoteItem)
+        verify(roomRoomItemMapper, times(1)).map(validRemoteItem)
     }
 
     @Test
@@ -52,6 +52,6 @@ class ItemServiceImplTest {
             .dispose()
 
         // assert
-        verify(roomItemMapper, times(1)).map(validRemoteItem)
+        verify(roomRoomItemMapper, times(1)).map(validRemoteItem)
     }
 }

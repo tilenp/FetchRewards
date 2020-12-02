@@ -4,7 +4,7 @@ import com.example.fetchrewards.NAME_SEPARATOR
 import com.example.fetchrewards.database.RoomItem
 import javax.inject.Inject
 
-class RoomItemMapper @Inject constructor() {
+class ItemMapper @Inject constructor() {
 
     fun map(roomItem: RoomItem): Item {
         return Item (

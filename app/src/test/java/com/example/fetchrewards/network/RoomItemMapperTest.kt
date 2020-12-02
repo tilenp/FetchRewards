@@ -6,7 +6,7 @@ import org.junit.Test
 
 class RoomItemMapperTest {
 
-    private val mapper = ItemMapper()
+    private val mapper = RoomItemMapper()
 
     @Test
     fun non_null_parameters_are_mapped_correctly() {

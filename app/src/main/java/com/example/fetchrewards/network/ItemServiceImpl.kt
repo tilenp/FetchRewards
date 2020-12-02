@@ -9,12 +9,12 @@ import javax.inject.Singleton
 @Singleton
 class ItemServiceImpl @Inject constructor(
     private val itemApi: ItemApi,
-    private val itemMapper: ItemMapper
+    private val roomItemMapper: RoomItemMapper
 ): ItemService {
 
     override fun getItems(): Single<List<RoomItem>> {
         return itemApi.getItems()
             .map { remoteItems -> remoteItems.filter { !it.name.isNullOrEmpty() } }
-            .map { remoteItems -> remoteItems.map { itemMapper.map(it) } }
+            .map { remoteItems -> remoteItems.map { roomItemMapper.map(it) } }
     }
 }

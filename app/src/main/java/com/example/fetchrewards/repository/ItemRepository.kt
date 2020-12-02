@@ -10,7 +10,7 @@ import javax.inject.Singleton
 class ItemRepository @Inject constructor(
     private val itemService: ItemService,
     private val itemDao: ItemDao,
-    private val roomItemMapper: RoomItemMapper
+    private val itemMapper: ItemMapper
 ) {
 
     fun updateItems(): Completable {
@@ -20,6 +20,6 @@ class ItemRepository @Inject constructor(
 
     fun getItems(): Observable<List<Item>> {
         return itemDao.getItems()
-            .map { roomItems -> roomItems.map { roomItemMapper.map(it) } }
+            .map { roomItems -> roomItems.map { itemMapper.map(it) } }
     }
 }

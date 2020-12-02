@@ -5,9 +5,9 @@ import com.example.fetchrewards.database.RoomItem
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-class RoomItemMapperTest {
+class ItemMapperTest {
 
-    private val mapper = RoomItemMapper()
+    private val mapper = ItemMapper()
 
     @Test
     fun parameters_are_mapped_correctly() {

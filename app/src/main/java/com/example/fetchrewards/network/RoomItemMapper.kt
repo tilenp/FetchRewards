@@ -8,7 +8,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ItemMapper @Inject constructor() {
+class RoomItemMapper @Inject constructor() {
 
     fun map(remoteItem: RemoteItem): RoomItem {
         val nameNumber = parseNumber(remoteItem.name)
