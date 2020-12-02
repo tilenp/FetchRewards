@@ -4,10 +4,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class Item(
+data class RoomItem(
     @PrimaryKey
     val id: Int,
     val listId: Int,
-    val namePrefix: String,
-    val nameNumber: Int
+    val nameFormat: String,
+    val nameNumber: Int?
 )

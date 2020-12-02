@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.fetchrewards.DATABASE_NAME
 
-@Database(entities = [Item::class], version = 1, exportSchema = true)
+@Database(entities = [RoomItem::class], version = 1, exportSchema = true)
 abstract class ItemDatabase : RoomDatabase() {
     abstract fun getItemDao(): ItemDao
 

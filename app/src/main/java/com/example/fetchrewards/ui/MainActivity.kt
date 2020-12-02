@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fetchrewards.dagger.ComponentProvider
-import com.example.fetchrewards.database.Item
 import com.example.fetchrewards.databinding.ActivityMainBinding
+import com.example.fetchrewards.repository.Item
 import com.example.fetchrewards.utils.SchedulerProvider
 import com.example.fetchrewards.viewModel.ItemViewModel
 import io.reactivex.disposables.CompositeDisposable

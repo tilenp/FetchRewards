@@ -11,8 +11,8 @@ import io.reactivex.Observable
 interface ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertItems(items: List<Item>): Completable
+    fun insertItems(roomItems: List<RoomItem>): Completable
 
-    @Query("SELECT * FROM Item ORDER BY Item.listId ASC, Item.nameNumber ASC")
-    fun getItems(): Observable<List<Item>>
+    @Query("SELECT * FROM RoomItem ORDER BY RoomItem.listId ASC, RoomItem.nameNumber ASC")
+    fun getItems(): Observable<List<RoomItem>>
 }

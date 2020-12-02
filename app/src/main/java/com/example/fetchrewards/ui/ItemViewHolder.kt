@@ -5,8 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fetchrewards.R
-import com.example.fetchrewards.database.Item
 import com.example.fetchrewards.databinding.ItemRowBinding
+import com.example.fetchrewards.repository.Item
 
 class ItemViewHolder(
     private val binding: ItemRowBinding
@@ -16,7 +16,7 @@ class ItemViewHolder(
         with(binding) {
             idTextView.text = String.format(idTextView.context.getString(R.string.id_format), item.id)
             listIdTextView.text = String.format(listIdTextView.context.getString(R.string.list_id_format), item.listId)
-            nameTextView.text = String.format(nameTextView.context.getString(R.string.name_format), item.namePrefix)
+            nameTextView.text = String.format(nameTextView.context.getString(R.string.name_format), item.name)
         }
     }
 

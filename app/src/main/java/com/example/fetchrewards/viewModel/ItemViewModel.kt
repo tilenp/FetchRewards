@@ -1,7 +1,7 @@
 package com.example.fetchrewards.viewModel
 
 import androidx.lifecycle.ViewModel
-import com.example.fetchrewards.database.Item
+import com.example.fetchrewards.repository.Item
 import com.example.fetchrewards.repository.ItemRepository
 import com.example.fetchrewards.utils.SchedulerProvider
 import io.reactivex.Observable
@@ -23,7 +23,9 @@ class ItemViewModel @Inject constructor(
         compositeDisposable.add(
             itemRepository.updateItems()
                 .subscribeOn(schedulerProvider.io())
-                .subscribe({}, {})
+                .subscribe({}, {
+                    System.out.println(it.message)
+                })
         )
     }
 

@@ -2,8 +2,7 @@ package com.example.fetchrewards.ui
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fetchrewards.database.Item
-import java.util.ArrayList
+import com.example.fetchrewards.repository.Item
 
 class ItemAdapter : RecyclerView.Adapter<ItemViewHolder>() {
 
