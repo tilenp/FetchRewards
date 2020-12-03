@@ -5,7 +5,7 @@ import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.example.fetchrewards.repository.Item
 
-class PagingAdapter() : PagedListAdapter<Item, ItemViewHolder>(DIFF_CALLBACK) {
+class PagingAdapter : PagedListAdapter<Item, ItemViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         return ItemViewHolder.create(parent)

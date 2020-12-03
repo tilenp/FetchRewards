@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     private val compositeDisposable = CompositeDisposable()
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter: ItemAdapter
     private lateinit var pagingAdapter: PagingAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,10 +41,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpUI() {
-//        adapter = ItemAdapter()
-//        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-//        binding.recyclerView.adapter = adapter
-
         pagingAdapter = PagingAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = pagingAdapter
@@ -53,19 +48,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-//        compositeDisposable.add(
-//            viewModel.getItems()
-//                .subscribeOn(schedulerProvider.io())
-//                .observeOn(schedulerProvider.main())
-//                .subscribe({items ->
-//                    updateUI(items)
-//                }, { throwable ->
-//                    System.out.println(throwable.message)
-//                })
-//        )
-
         compositeDisposable.add(
-            viewModel.getI()
+            viewModel.getItems()
                 .subscribe({ items ->
                     updateItems(items)
                 }, { throwable ->
