@@ -68,9 +68,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.getItems()
                 .subscribe({ items ->
                     updateItems(items)
-                }, { throwable ->
-                    System.out.println(throwable.message)
-                })
+                }, {})
         )
     }
 

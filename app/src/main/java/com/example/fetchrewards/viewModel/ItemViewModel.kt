@@ -38,9 +38,7 @@ class ItemViewModel @Inject constructor(
                 .subscribeOn(schedulerProvider.io())
                 .subscribe({
                     uiStateSubject.onNext(it)
-                }, {
-                    System.out.println("TTT")
-                })
+                }, {})
         )
     }
 
