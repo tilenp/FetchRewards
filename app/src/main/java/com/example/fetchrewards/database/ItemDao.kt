@@ -1,5 +1,6 @@
 package com.example.fetchrewards.database
 
+import androidx.paging.DataSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -15,4 +16,7 @@ interface ItemDao {
 
     @Query("SELECT * FROM RoomItem ORDER BY RoomItem.listId ASC, RoomItem.nameNumber ASC")
     fun getItems(): Observable<List<RoomItem>>
+
+    @Query("SELECT * FROM RoomItem ORDER BY RoomItem.listId ASC, RoomItem.nameNumber ASC")
+    fun getI(): DataSource.Factory<Int, RoomItem>
 }

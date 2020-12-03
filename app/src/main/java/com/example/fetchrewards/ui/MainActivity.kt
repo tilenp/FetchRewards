@@ -3,6 +3,7 @@ package com.example.fetchrewards.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.paging.PagedList
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fetchrewards.dagger.ComponentProvider
 import com.example.fetchrewards.databinding.ActivityMainBinding
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var schedulerProvider: SchedulerProvider
+
     @Inject
     lateinit var postsViewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: ItemViewModel
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: ItemAdapter
+    private lateinit var pagingAdapter: PagingAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         (application as ComponentProvider).provideAppComponent().inject(this)
@@ -39,27 +42,40 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpUI() {
-        adapter = ItemAdapter()
+//        adapter = ItemAdapter()
+//        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+//        binding.recyclerView.adapter = adapter
+
+        pagingAdapter = PagingAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView.adapter = pagingAdapter
     }
 
     override fun onStart() {
         super.onStart()
+//        compositeDisposable.add(
+//            viewModel.getItems()
+//                .subscribeOn(schedulerProvider.io())
+//                .observeOn(schedulerProvider.main())
+//                .subscribe({items ->
+//                    updateUI(items)
+//                }, { throwable ->
+//                    System.out.println(throwable.message)
+//                })
+//        )
+
         compositeDisposable.add(
-            viewModel.getItems()
-                .subscribeOn(schedulerProvider.io())
-                .observeOn(schedulerProvider.main())
-                .subscribe({items ->
-                    updateUI(items)
+            viewModel.getI()
+                .subscribe({ items ->
+                    updateItems(items)
                 }, { throwable ->
                     System.out.println(throwable.message)
                 })
         )
     }
 
-    private fun updateUI(items: List<Item>) {
-        adapter.setItems(items)
+    private fun updateItems(items: PagedList<Item>) {
+        pagingAdapter.submitList(items)
     }
 
     override fun onStop() {
