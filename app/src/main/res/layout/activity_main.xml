@@ -10,8 +10,8 @@
         android:layout_width="@dimen/fixed_content_width"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:paddingStart="@dimen/fixed_content_width_padding_start_end"
-        android:paddingEnd="@dimen/fixed_content_width_padding_start_end"
+        android:layout_marginStart="@dimen/fixed_content_width_margin_start_end"
+        android:layout_marginEnd="@dimen/fixed_content_width_margin_start_end"
         android:scrollbars="vertical" />
 
 </FrameLayout>

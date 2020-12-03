@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         pagingAdapter = PagingAdapter()
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = pagingAdapter
+        binding.recyclerView.addItemDecoration(MyItemDecorator(this))
     }
 
     override fun onStart() {

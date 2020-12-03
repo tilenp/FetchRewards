@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="fixed_content_width">@dimen/custom_match_parent</dimen>
-    <dimen name="fixed_content_width_padding_start_end">16dp</dimen>
+    <dimen name="fixed_content_width_margin_start_end">16dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
 </resources>
