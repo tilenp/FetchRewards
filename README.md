@@ -20,5 +20,9 @@ The project contains  [Local unit tests][2] and [Instrumented tests][3].
 
 Just run `./gradlew test` or `./gradlew connectedAndroidTest`
 
+## Screenshots
+
+<img width="30%" src="screenshots/fetch_rewards.png" />
+
 [2]: app/src/test/java/com/example/fetchrewards/
 [3]: app/src/androidTest/java/com/example/fetchrewards/
