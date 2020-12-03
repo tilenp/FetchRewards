@@ -1,8 +1,6 @@
 # FetchRewards
 
-A simple app written using Kotlin and MVVM design pattern. The app stores the items retrieved from a remote source into the local database and shows them in a list using Paging library 2. 
-When items are stored, the number is parsed from the name and stored in a new column in the table. When items are retrieved from the database they are sorted by listId and nameNumber.
-The app shows loading state and error messages for failed network requests or failed database queries.
+A simple app written using Kotlin and MVVM design pattern. The app retrieves items from a remote source and filters out items with null or blank names. Then it parses a number from item's name and stores the item with an aditional nameNumber field into a table. When items are retrieved from the database they are sorted by listId and nameNumber. The results are shown in a list using Paging library 2. The app shows loading state, empty database state and error messages for failed network requests or failed database queries.
 
 ## Libraries
 
@@ -11,7 +9,7 @@ The app shows loading state and error messages for failed network requests or fa
 - Room
 - Paging 2
 - RxJava 2
-- Picasso
+- Mockito
 - JUnit
 
 ## Testing
