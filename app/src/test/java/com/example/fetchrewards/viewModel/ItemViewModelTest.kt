@@ -29,8 +29,8 @@ class ItemViewModelTest {
     fun when_viewModel_is_instantiated_items_are_updated() {
         // arrange
         setUp(
-            updateItemsRequest = Completable.complete(),
-            itemCountQuery = Observable.just(1)
+            updateItemsRequest = Completable.never(),
+            itemCountQuery = Observable.never()
         )
 
         // assert
@@ -110,5 +110,20 @@ class ItemViewModelTest {
             .test()
             .assertValue(UIState.NoItems)
             .dispose()
+    }
+
+    @Test
+    fun when_retry_is_invoked_items_are_reloaded() {
+        // arrange
+        setUp(
+            updateItemsRequest = Completable.never(),
+            itemCountQuery = Observable.never()
+        )
+
+        // act
+        viewModel.retry()
+
+        // assert
+        verify(itemRepository, times(2)).updateItems()
     }
 }

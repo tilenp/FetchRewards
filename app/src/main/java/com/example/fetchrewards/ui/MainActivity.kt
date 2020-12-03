@@ -45,9 +45,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpUI() {
         pagingAdapter = PagingAdapter()
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = pagingAdapter
-        binding.recyclerView.addItemDecoration(MyItemDecorator(this))
+        with(binding) {
+            recyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+            recyclerView.adapter = pagingAdapter
+            recyclerView.addItemDecoration(MyItemDecorator(this@MainActivity))
+            retryTextView.setOnClickListener { viewModel.retry() }
+        }
     }
 
     override fun onStart() {
@@ -83,7 +86,7 @@ class MainActivity : AppCompatActivity() {
     private fun setLoadingState() {
         with(binding) {
             progressBar.visibility = View.VISIBLE
-            noItemsTextView.visibility = View.GONE
+            retryTextView.visibility = View.GONE
             recyclerView.visibility = View.GONE
         }
     }
@@ -91,7 +94,7 @@ class MainActivity : AppCompatActivity() {
     private fun setSuccessState() {
         with(binding) {
             progressBar.visibility = View.GONE
-            noItemsTextView.visibility = View.GONE
+            retryTextView.visibility = View.GONE
             recyclerView.visibility = View.VISIBLE
         }
     }
@@ -99,7 +102,7 @@ class MainActivity : AppCompatActivity() {
     private fun setNoItemsState() {
         with(binding) {
             progressBar.visibility = View.GONE
-            noItemsTextView.visibility = View.VISIBLE
+            retryTextView.visibility = View.VISIBLE
             recyclerView.visibility = View.GONE
         }
     }

@@ -62,6 +62,11 @@ class ItemViewModel @Inject constructor(
             }
     }
 
+    fun retry() {
+        compositeDisposable.clear()
+        updateItems()
+    }
+
     override fun onCleared() {
         super.onCleared()
         compositeDisposable.dispose()

@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ItemTextStyle">
+        <item name="android:layout_marginStart">@dimen/fixed_content_width_margin_start_end</item>
+        <item name="android:layout_marginEnd">@dimen/fixed_content_width_margin_start_end</item>
+    </style>
+
 </resources>

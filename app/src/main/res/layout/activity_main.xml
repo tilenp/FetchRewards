@@ -13,23 +13,20 @@
         android:layout_gravity="center" />
 
     <TextView
-        android:id="@+id/no_items_text_view"
+        android:id="@+id/retry_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/nothing_to_show"
+        android:text="@string/nothing_to_show_retry"
         android:visibility="gone"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:padding="16dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="@dimen/fixed_content_width"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_marginStart="@dimen/fixed_content_width_margin_start_end"
-        android:layout_marginEnd="@dimen/fixed_content_width_margin_start_end"
-        android:scrollbars="vertical"
-        android:visibility="gone"
-        tools:visibility="visible" />
+        android:scrollbars="vertical" />
 
 </FrameLayout>
