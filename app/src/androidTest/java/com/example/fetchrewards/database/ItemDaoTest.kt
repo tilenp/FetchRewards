@@ -46,4 +46,17 @@ class ItemDaoTest {
             .assertNoErrors()
             .dispose()
     }
+
+    @Test
+    fun get_item_count_works_correctly() {
+        //arrange
+        setUp(listOf(RoomItem()))
+
+        // assert
+        itemDao.getItemCount()
+            .test()
+            .assertValue(1)
+            .assertNoErrors()
+            .dispose()
+    }
 }

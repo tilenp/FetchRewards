@@ -3,6 +3,7 @@ package com.example.fetchrewards.repository
 import androidx.paging.DataSource
 import com.example.fetchrewards.database.ItemDao
 import io.reactivex.Completable
+import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -16,6 +17,10 @@ class ItemRepository @Inject constructor(
     fun updateItems(): Completable {
         return itemService.getItems()
             .flatMapCompletable { items -> itemDao.insertItems(items) }
+    }
+
+    fun getItemCount(): Observable<Int> {
+        return itemDao.getItemCount()
     }
 
     fun getItems(): DataSource.Factory<Int, Item>{

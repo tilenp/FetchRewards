@@ -27,4 +27,14 @@ class ItemMapperTest {
         assertEquals(listId, result.listId)
         assertEquals(name, result.name)
     }
+
+    @Test
+    fun when_name_does_not_contain_separator_it_is_formatted_correctly() {
+        // act
+        val nameFormat = "Item "
+        val result = mapper.formatName(nameFormat, null)
+
+        // assert
+        assertEquals(nameFormat, result)
+    }
 }

@@ -5,6 +5,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/no_items_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/nothing_to_show"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="@dimen/fixed_content_width"
@@ -12,6 +28,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginStart="@dimen/fixed_content_width_margin_start_end"
         android:layout_marginEnd="@dimen/fixed_content_width_margin_start_end"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
 </FrameLayout>
