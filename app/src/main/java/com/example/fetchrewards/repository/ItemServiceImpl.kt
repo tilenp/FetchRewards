@@ -1,7 +1,9 @@
-package com.example.fetchrewards.network
+package com.example.fetchrewards.repository
 
 import com.example.fetchrewards.database.RoomItem
-import com.example.fetchrewards.repository.ItemService
+import com.example.fetchrewards.network.ItemApi
+import com.example.fetchrewards.network.ItemService
+import com.example.fetchrewards.network.RoomItemMapper
 import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton

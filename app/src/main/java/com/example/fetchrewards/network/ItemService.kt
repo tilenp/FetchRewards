@@ -1,4 +1,4 @@
-package com.example.fetchrewards.repository
+package com.example.fetchrewards.network
 
 import com.example.fetchrewards.database.RoomItem
 import io.reactivex.Single

@@ -2,6 +2,7 @@ package com.example.fetchrewards.repository
 
 import com.example.fetchrewards.database.ItemDao
 import com.example.fetchrewards.database.RoomItem
+import com.example.fetchrewards.network.ItemService
 import com.nhaarman.mockitokotlin2.*
 import io.reactivex.Completable
 import io.reactivex.Observable

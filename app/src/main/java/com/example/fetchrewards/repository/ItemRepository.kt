@@ -2,6 +2,7 @@ package com.example.fetchrewards.repository
 
 import androidx.paging.DataSource
 import com.example.fetchrewards.database.ItemDao
+import com.example.fetchrewards.network.ItemService
 import io.reactivex.Completable
 import io.reactivex.Observable
 import javax.inject.Inject
