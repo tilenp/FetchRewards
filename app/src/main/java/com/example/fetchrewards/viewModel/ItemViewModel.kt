@@ -32,7 +32,8 @@ class ItemViewModel @Inject constructor(
                 .doOnError { uiStateSubject.onNext(UIState.Error(R.string.network_error)) }
                 .onErrorComplete()
                 .andThen(itemRepository.getItemCount()
-                    .doOnError { uiStateSubject.onNext(UIState.Error(R.string.database_error)) })
+                    .doOnError { uiStateSubject.onNext(UIState.Error(R.string.database_error)) }
+                    .onErrorReturn { 0 })
                 .map { itemCount -> if (itemCount == 0) UIState.NoItems else UIState.Success }
                 .doOnSubscribe { uiStateSubject.onNext(UIState.Loading) }
                 .subscribeOn(schedulerProvider.io())

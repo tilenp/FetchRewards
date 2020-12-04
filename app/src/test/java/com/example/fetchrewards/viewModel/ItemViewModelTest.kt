@@ -98,6 +98,21 @@ class ItemViewModelTest {
     }
 
     @Test
+    fun when_network_request_fails_and_database_query_fails_ui_state_is_set_correctly() {
+        // arrange
+        setUp(
+            updateItemsRequest = Completable.error(Throwable()),
+            itemCountQuery = Observable.error(Throwable())
+        )
+
+        // assert
+        viewModel.getUIState()
+            .test()
+            .assertValue(UIState.NoItems)
+            .dispose()
+    }
+
+    @Test
     fun when_network_request_fails_and_database_is_empty_ui_state_is_set_correctly() {
         // arrange
         setUp(
