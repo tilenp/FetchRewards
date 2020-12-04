@@ -66,7 +66,7 @@ class RoomItemMapperTest {
     }
 
     @Test
-    fun names_with_a_number_are_parsed_correctly() {
+    fun names_with_a_number_are_formatted_correctly() {
         // act
         val name = "Item 12"
         val number = 12
