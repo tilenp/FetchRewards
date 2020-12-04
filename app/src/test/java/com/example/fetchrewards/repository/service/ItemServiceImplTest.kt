@@ -1,4 +1,4 @@
-package com.example.fetchrewards.repository
+package com.example.fetchrewards.repository.service
 
 import com.example.fetchrewards.database.RoomItem
 import com.example.fetchrewards.network.ItemApi
@@ -14,20 +14,14 @@ class ItemServiceImplTest {
     private val roomRoomItemMapper: RoomItemMapper = mock()
     private lateinit var itemServiceImpl: ItemServiceImpl
 
-    private val blankNameRemoteItem =
-        RemoteItem(name = "")
-    private val nullNameRemoteItemItem =
-        RemoteItem(name = null)
-    private val validRemoteItem =
-        RemoteItem(name = "Item 1")
+    private val blankNameRemoteItem = RemoteItem(name = "")
+    private val nullNameRemoteItemItem = RemoteItem(name = null)
+    private val validRemoteItem = RemoteItem(name = "Item 1")
 
-    fun setUp(remoteItems: List<RemoteItem>) {
+    private fun setUp(remoteItems: List<RemoteItem>) {
         whenever(itemApi.getItems()).thenReturn(Single.just(remoteItems))
         whenever(roomRoomItemMapper.map(any())).thenReturn(RoomItem())
-        itemServiceImpl = ItemServiceImpl(
-            itemApi,
-            roomRoomItemMapper
-        )
+        itemServiceImpl = ItemServiceImpl(itemApi, roomRoomItemMapper)
     }
 
     @Test

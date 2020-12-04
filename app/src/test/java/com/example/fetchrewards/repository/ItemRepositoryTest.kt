@@ -2,7 +2,7 @@ package com.example.fetchrewards.repository
 
 import com.example.fetchrewards.database.ItemDao
 import com.example.fetchrewards.database.RoomItem
-import com.example.fetchrewards.network.ItemService
+import com.example.fetchrewards.repository.service.ItemService
 import com.nhaarman.mockitokotlin2.*
 import io.reactivex.Completable
 import io.reactivex.Observable
@@ -16,7 +16,7 @@ class ItemRepositoryTest {
     private val itemMapper: ItemMapper = mock()
     private lateinit var itemRepository: ItemRepository
 
-    fun setUp(roomItems: List<RoomItem>) {
+    private fun setUp(roomItems: List<RoomItem>) {
         whenever(itemService.getItems()).thenReturn(Single.just(roomItems))
         whenever(itemDao.insertItems(any())).thenReturn(Completable.complete())
         whenever(itemDao.getItemCount()).thenReturn(Observable.just(roomItems.size))

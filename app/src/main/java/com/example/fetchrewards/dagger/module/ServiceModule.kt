@@ -1,7 +1,7 @@
 package com.example.fetchrewards.dagger.module
 
-import com.example.fetchrewards.repository.ItemServiceImpl
-import com.example.fetchrewards.network.ItemService
+import com.example.fetchrewards.repository.service.ItemServiceImpl
+import com.example.fetchrewards.repository.service.ItemService
 import dagger.Binds
 import dagger.Module
 
