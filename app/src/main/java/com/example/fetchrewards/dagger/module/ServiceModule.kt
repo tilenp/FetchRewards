@@ -1,4 +1,4 @@
-package com.example.fetchrewards.dagger
+package com.example.fetchrewards.dagger.module
 
 import com.example.fetchrewards.network.ItemServiceImpl
 import com.example.fetchrewards.repository.ItemService

@@ -1,10 +1,10 @@
-package com.example.fetchrewards.dagger
+package com.example.fetchrewards.dagger.module
 
 import androidx.lifecycle.ViewModelProvider
 import com.example.fetchrewards.BASE_URL
+import com.example.fetchrewards.dagger.ItemViewModelFactory
 import com.example.fetchrewards.network.ItemApi
 import com.example.fetchrewards.repository.ItemRepository
-import com.example.fetchrewards.utils.RuntimeSchedulerProvider
 import com.example.fetchrewards.utils.SchedulerProvider
 import dagger.Module
 import dagger.Provides
@@ -17,12 +17,6 @@ import javax.inject.Singleton
 
 @Module
 class ApiModule {
-
-    @Singleton
-    @Provides
-    fun providesSchedulerProvider(): SchedulerProvider {
-        return RuntimeSchedulerProvider()
-    }
 
     @Singleton
     @Provides

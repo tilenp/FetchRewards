@@ -1,4 +1,4 @@
-package com.example.fetchrewards.dagger
+package com.example.fetchrewards.dagger.module
 
 import android.content.Context
 import com.example.fetchrewards.database.ItemDao
